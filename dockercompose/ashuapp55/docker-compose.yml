@@ -1,0 +1,10 @@
+version: '3.7'
+services:
+ ashuweboracleapp:
+  image: dockerashu/ashuoracleweb:v2
+  container_name: ashuwebc1
+  ports:
+   - '8987:80'   #  this is  array forfmat  
+  volumes:
+   - ./mypage:/var/www/html/
+

@@ -1,0 +1,11 @@
+version: '3.5'
+services:
+ ashutest1:
+  image: alpine
+  container_name:  ashutestc1
+  command: ping  fb.com
+
+ ashutest2:
+  image: alpine
+  container_name:  ashutestc2
+  command: ping  google.com 

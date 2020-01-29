@@ -1,0 +1,359 @@
+    1  clear
+    2  who
+    3  pwd
+    4  who
+    5  sudo  docker  version
+    6  sudo  systemctl  start  docker
+    7  sudo  docker  version
+    8  sudo  systemctl  enable  docker
+    9  history 
+   10  sudo  docker  search   mysql
+   11  sudo  docker  pull  mysql
+   12  sudo  docker  images
+   13  sudo  docker  info 
+   14  clear
+   15  sudo  docker  run  --name  ashuc111 -d   alpine  ping  fb.com 
+   16  sudo   docker  ps
+   17  sudo   docker  logs  ashuc111
+   18  sudo   docker  logs  ashuc111   -f
+   19  history 
+   20  sudo  docker  kill   ashuc111
+   21  sudo   docker  logs  ashuc111 
+   22  history 
+   23  sudo docker  info 
+   24  sudo docker  info    |  less
+   25  sudo curl https://raw.githubusercontent.com/docker/docker-ce/master/components/cli/contrib/completion/bash/docker -o /etc/bash_completion.d/docker.sh
+   26  exit
+   27  history
+   28  exit
+   29  history
+   30  exit
+   31  history
+   32  exit
+   33  s
+   34  ls
+   35  cd webapp1/
+   36  ls -ltr
+   37  exit
+   38  history
+   39  sudo   docker  volume  ls 
+   40  sudo   docker  volume  rm ashuvol
+   41  history 
+   42  ifconfig  docker0
+   43  sudo  docker  run  -it  --rm  alpine  sh 
+   44  sudo  docker  network   ls
+   45  sudo  docker   network   create   ashubr
+   46  sudo  docker network  ls
+   47  sudo  docker  run  -d  --name  ashud0c  alpine ping fb.com 
+   48  sudo  docker  run  -d  --name  ashubrc   --network=ashubr  alpine ping fb.com 
+   49  sudo  docker  ps
+   50  history 
+   51  sudo  docker  inspect  ashud0c
+   52  history 
+   53  sudo  docker  exec  -it  ashubrc  sh 
+   54  history 
+   55  sudo  docker  exec  -it  ashubrc  ping  172.17.0.4
+   56  sudo docker  network  ls
+   57  sudo  docker  inspect   ashubr
+   58  sudo docker  network ls
+   59  sudo  docker  network  inspect   nikhil
+   60  history 
+   61  sudo  docker  kill   $(docker  ps  -aq)
+   62  sudo  docker  rm   $(docker  ps  -aq)
+   63  sudo  docker  kill   $(sudo  docker  ps  -aq)
+   64  sudo  docker  rm    $(sudo  docker  ps  -aq)
+   65  sudo  docker  run  --name  ashuc1  -d alpine ping fb.com 
+   66  sudo  docker  run  --name  ashuc2  -d alpine ping fb.com 
+   67  sudo  docker  run  --name  ashuc3  -d  --network=ashubr  alpine ping fb.com 
+   68  history 
+   69  sudo  docker  network  connect  ashuc1  ashubr
+   70  sudo  docker  network  connect  ashubr  ashuc1
+   71  sudo  docker  exec -it  ashuc1  sh 
+   72  history 
+   73  sudo  docker  network  disconnect  ashubr  ashuc1
+   74  sudo  docker  exec -it  ashuc1  sh 
+   75  history 
+   76  sudo  docker  network  inspect   ashubr
+   77  history 
+   78  sudo  docker  network  inspect   ashubr
+   79  history 
+   80  sudo  docker  network   create   ashubr1  --subnet 192.168.0.0/24 
+   81  sudo docker network  inspect  ashubr1
+   82  history 
+   83  sudo docker  run  --name  ashuc6 -d  --network ashubr1  --ip 192.168.0.100 alpine  ping fb.com 
+   84  sudo docker  exec  -it ashuc6  hostname -i
+   85  history 
+   86  sudo docker  run  --name  ashuc7 -d  --network ashubr1  alpine  ping fb.com 
+   87  sudo docker  exec  -it ashuc7  hostname -i
+   88  history 
+   89  pwd
+   90  ls
+   91  mkdir  webapp1
+   92  ls
+   93  vi   webapp1/ashu.html 
+   94  cat  webapp1/ashu.html 
+   95  cd  webapp1/
+   96  wget  https://cdn.app.compendium.com/uploads/user/e7c690e8-6ff9-102a-ac6d-e4aebca50425/d3598759-8045-4b7f-9619-0fed901a9e0b/File/a35b11e3f02caf5d5080e48167cf320c/1_xtt86qweroeeldhjroaaaq.png
+   97  ls
+   98  history 
+   99  ls
+  100  mv  1_xtt86qweroeeldhjroaaaq.png  oracle.png
+  101  ls
+  102  cat  ashu.html 
+  103  ls
+  104  mkdir   /tmp/oracle
+  105  cp  -v  ashu.html  oracle.png  /tmp/oracle/
+  106  history 
+  107  cd  ..
+  108  pwd
+  109  ls
+  110  sudo docker  run   --name ashuweb1  -d  -v  /home/user20/webapp1/:/usr/share/nginx/html/          nginx  
+  111  sudo  docker  ps  ashuweb1
+  112  sudo  docker  ps 
+  113  sudo  docker  ps |   grep -i ashu
+  114  history 
+  115  sudo  docker  ps |   grep -i ashu
+  116  sudo  docker  ps   ashuweb1
+  117  sudo  docker  inspect   ashuweb1  
+  118  history 
+  119  sudo -i
+  120  ls
+  121  sudo  docker  run --name  ashuweb2  -d  -v /home/user20/webapp1/:/usr/share/nginx/html/                -p   1234:80   nginx  
+  122  sudo docker  ps   |  grep -i ashu
+  123  sudo  docker  run --name  ashuweb3  -d  -v /tmp/oracle/:/usr/share/nginx/html/                -p  5555:80   nginx  
+  124  sudo docker  ps   |  grep -i ashu
+  125  history 
+  126  ls
+  127  ls  webapp1/
+  128  history 
+  129  sudo  docker  ps  |   grep -i nik
+  130  sudo -i
+  131  history 
+  132  sudo  cp  -v  /tmp/oracle/*   /home/user7/webapp1
+  133  history 
+  134  sudo  docker  ps   |    grep -i gur
+  135  sudo  docker  ps   |    grep -i bik
+  136  history 
+  137  sudo  docker  ps   |    grep -i  har
+  138  sudo  docker  ps   |    grep -i websa
+  139  sudo  docker  exec -it  websai1  bash
+  140  history 
+  141  sudo  docker  ps   |    grep -i  rohit
+  142  history 
+  143  sudo  docker  ps   |    grep -i  rohit
+  144  sudo  docker  ps   |    grep -i  roh
+  145  sudo docker ps
+  146  sudo docker ps -a
+  147  ls
+  148  cd image1
+  149  ls
+  150  docker ps
+  151  sudo docker ps
+  152  cd ..
+  153  ls
+  154  cd image1
+  155  ls
+  156  car Dockerfile 
+  157  cat Dockerfile 
+  158  history
+  159  cat Dockerfile 
+  160  vi Dockerfile 
+  161  vim Dockerfile 
+  162  history
+  163  exit
+  164  ls
+  165  cd image1
+  166  ls
+  167  sudo docker tag ashuoracleweb:v2 shubhamkumar169/ashuoracleweb:v2
+  168  docker login
+  169  sudo docker login
+  170  docker login
+  171  sudo docker push shubhamkumar169/ashuoracleweb:v2
+  172  docker logout
+  173  docker login
+  174  sudo docker push shubhamkumar169/ashuoracleweb:v2
+  175  sudo docker tag ashuoracleweb:v2 shubhamkumar169/ashuoracleweb:v2
+  176  sudo docker push shubhamkumar169/ashuoracleweb:v2
+  177  docker push shubhamkumar169/ashuoracleweb:v2
+  178  docker images
+  179  logout
+  180  history 
+  181  ls
+  182  mkdir  image1
+  183  cd  image1/
+  184  vim  Dockerfile
+  185  cat  Dockerfile 
+  186  sudo  docker  inspect  alpine  |  less
+  187  sudo  docker  run  --name  okkk  alpine  
+  188  sudo  docker  run  --name  o1kkk -it  alpine  
+  189  ls
+  190  cat  Dockerfile 
+  191  vim Dockerfile 
+  192  ls
+  193  cd  ..
+  194  ls
+  195  cp  -v webapp1/ashu.html   image1/
+  196  cp  -v webapp1/oracle.png  image1/
+  197  ls  image1/
+  198  cd  image1/
+  199  ls
+  200  cp  Dockerfile   /tmp/oracle/
+  201  yum   install  git  -y
+  202  sudo  yum   install  git  -y
+  203  git  clone   https://github.com/redashu/oracleonlinejan2020
+  204  ls
+  205  cp  ashu.html  Dockerfile  oracle.png   oracleonlinejan2020/
+  206  cd  oracleonlinejan2020/
+  207  ls
+  208  git  add .
+  209  git commit -m  "day2 docker"
+  210  git config --global user.email  ashutoshh@linux.com
+  211  git config --global user.name  redashu
+  212  git commit -m  "day2 docker"
+  213  git push
+  214  cd ..
+  215  ls
+  216  mv  oracleonlinejan2020/ /home/user20/
+  217  ls
+  218  sudo  docker   build  -t  ashuweboracle:v1  .
+  219  sudo  docker  images
+  220  ls
+  221  sudo  docker  version
+  222  history 
+  223  sudo  docker  images
+  224  sudo  docker  run  --name  ashuwebc1  -d -p 9090:80  ashuweboracle:v1  
+  225  sudo  docker  ps   |    grep -i  ashu
+  226  history 
+  227  cat  Dockerfile 
+  228  sudo  docker  images
+  229  history 
+  230  ls
+  231  sudo  docker  images
+  232  sudo  docker   inspect   ashuweboracle:v1 
+  233  sudo  docker   inspect   ashuweboracle:v1   |  less
+  234  sudo  docker   history  ashuweboracle:v1   
+  235  cd
+  236  sudo  docker  images
+  237  sudo  docker   history  ashuweboracle:v1   
+  238  sudo  docker   image  
+  239  sudo  docker   images  
+  240  sudo  docker   history  ashuweboracle:v1   
+  241  sudo  docker   images
+  242  history 
+  243  sudo  docker  images
+  244  ls
+  245  cd   image1/
+  246  ls
+  247  cat  Dockerfile 
+  248  sudo  docker  kill   $(sudo docker  ps -aq)
+  249  sudo  docker  rm   $(sudo docker  ps -aq)
+  250  sudo docker  ps  -a
+  251  sudo  docker  run  --name  ashuwebc1  -d -p 9090:80  ashuweboracle:v1   bash  
+  252  cat  Dockerfile 
+  253  sudo  docker  ps
+  254  sudo  docker  ps -a
+  255  history 
+  256  ls
+  257  vim  Dockerfile 
+  258  history 
+  259  cat  Dockerfile 
+  260  sudo docker  build  -t  ashuoracleweb:v2  .
+  261  history 
+  262  cat  Dockerfile 
+  263  sudo  docker  run  -itd  --name  test  -p  8787:80  ashuoracleweb:v2  bash 
+  264  sudo docker  ps 
+  265  ls
+  266  cat Dockerfile 
+  267  vim  Dockerfile 
+  268  :q!
+  269  ls
+  270  vim  Dockerfile 
+  271  sudo  docker  images 
+  272  sudo  docker  tag  ashuoracleweb:v2   dockerashu/ashuoracleweb:v2
+  273  docker  login
+  274  sudo  docker  login
+  275  sudo  -i
+  276  docker  images
+  277  docker  login 
+  278  sudo  docker  push   dockerashu/ashuoracleweb:v2
+  279  docker   logout 
+  280  history 
+  281  sudo  -i
+  282  history 
+  283  sudo  -i
+  284  ls  -l  .docker/
+  285  rm  .docker/config.json 
+  286  docker  login
+  287  docker  logout
+  288  usdo -i
+  289  sudo  -i
+  290  docker  info  | less
+  291  sudo  vim   /etc/sysconfig/docker
+  292  sudo  systemctl  daemon-reload 
+  293  sudo  systemctl   restart  docker
+  294  cat  /etc/sysconfig/docker
+  295  docker  info 
+  296  history 
+  297  docker  images
+  298  docker  tag  ashuweboracle:v1    54.86.140.171:5000/ashuweboracle:v1
+  299  docker  push   54.86.140.171:5000/ashuweboracle:v1
+  300  history 
+  301  sudo -i
+  302  history 
+  303  ls
+  304  mkdir   image2
+  305  ls
+  306  cd  image2
+  307  ls
+  308  vim   ashu.dockerfile
+  309  cat  ashu.dockerfile 
+  310  docker  build  -t   ashutest:v1  .
+  311  docker  build  -t   ashutest:v1 -f  ashu.dockerfile .
+  312  history 
+  313  cat  ashu.dockerfile 
+  314  docker  run -it   ashutest:v1   bash 
+  315  cat  ashu.dockerfile 
+  316  ls
+  317  cat  ashu.dockerfile 
+  318  cp -v  ashu.dockerfile   ashunew.dockerfile
+  319  vim  ashunew.dockerfile 
+  320  docker  build  -t  ashutest:v2  -f  ashunew.dockerfile  . 
+  321  vim  ashunew.dockerfile 
+  322  docker  build  -t  ashutest:v2  -f  ashunew.dockerfile  . 
+  323  cat ashunew.dockerfile 
+  324  vim  ashunew.dockerfile 
+  325  docker  run --rm  ashutest:v2  env
+  326  docker  build  -t  ashutest:v3 --build-arg x=telnet -f  ashunew.dockerfile  . 
+  327  history 
+  328  cat  ashu
+  329  cat  ashunew.dockerfile 
+  330  history 
+  331  vim  ashunew.dockerfile 
+  332  docker  build  -t  ashutest:v4 --build-arg x=ftp  -f  ashunew.dockerfile  . 
+  333  ls
+  334  cat  ashunew.dockerfile 
+  335  history 
+  336  cat  ashunew.dockerfile 
+  337  ls
+  338  cp  ashu.dockerfile   ashufinal.dockerfile
+  339  ls
+  340  vim  ashufinal.dockerfile 
+  341  cat  ashufinal.dockerfile 
+  342  docker  build  -t ashutest:v4  -f  ashufinal.dockerfile  . 
+  343  docker  run --rm  ashutest:v4  env
+  344  sudo  -i
+  345  history 
+  346  cat  ashufinal.dockerfile 
+  347  docker  run --rm  -e y=fb.com   ashutest:v4  env
+  348  docker  run -it  ashutest:v4  
+  349  docker  run -it  -e  y=fb.com  ashutest:v4  
+  350  history 
+  351  ls
+  352  cp -v  ashufinal.dockerfile   ashufinal1.dockerfile
+  353  vim  ashufinal1.dockerfile 
+  354  docker  build  -t  ashutf:v9  -f ashufinal1.dockerfile  .
+  355  docker  run -it   ashutf:v9  
+  356  vim  ashufinal1.dockerfile 
+  357  ls
+  358  history 
+  359  history   >day2.txt

@@ -1,0 +1,9 @@
+version: '3.7'
+services:
+ ashuapp3s3:
+  image: ashucompose:v2  #  this is tag  of the image we want to build
+  #build: .  #  by build we are giving path of docker file
+  build: 
+   context: .   #  path of  dockerfile  
+   dockerfile: ashu.dockerfile  #  name of docker file
+  container_name:  ashuc123  #  container name 

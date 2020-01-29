@@ -1,0 +1,6 @@
+version: '3.7'
+services:
+ ashuwebapp1:
+  container_name: ashuc11
+  image: alpine
+  command: ping  fb.com

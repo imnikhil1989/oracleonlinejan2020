@@ -1,0 +1,64 @@
+  466  docker-compose
+  467  sudo curl -L "https://github.com/docker/compose/releases/download/1.25.3/docker-compose-$(uname -s)-$(uname -m)" -o /usr/bin/docker-compose
+  468  sudo  chmod  +x   /usr/bin/docker-compose 
+  470  docker-compose  -v
+  479  vim   docker-compose.yml   
+  480  cat  docker-compose.yml 
+  481  docker-compose up 
+  482  vim   docker-compose.yml   
+  483  docker-compose up 
+  484  vim   docker-compose.yml   
+  485  docker-compose up 
+  486  cat  docker-compose.yml 
+  488  rm  docker-compose.yml 
+  489  vim  docker-compose.yaml 
+  490  cp  -v  docker-compose.yaml   /tmp/
+  491  vim docker-compose.yaml 
+  493  docker-compose  up 
+  495  cat docker-compose.yaml 
+  496  docker-compose  up  
+  497  docker-compose  up  -d
+  498  docker-compose ps
+  500  docker-compose  images
+  501  docker-compose  down
+  502  docker-compose  down --remove-orphans
+  503  vim docker-compose.yaml 
+  504  cat docker-compose.yaml 
+  505  docker-compose up  -d
+  506  docker-compose ps
+  508  docker-compose  down 
+  509  docker-compose  down  --remove-orphans
+  517  docker-compose up -d
+  518  docker-compose  ps
+  519  cat  docker-compose.yaml 
+  520  docker-compose  kill
+  521  docker-compose  start
+  523  cat  docker-compose.yaml 
+  524  docker-compose ps
+  526  docker-compose down
+  536  docker-compose  up  -d
+  537  docker-compose  up -f  ashucompose.yml  -d
+  538  docker-compose -f  ashucompose.yml up   -d
+  539  docker-compose -f  ashucompose.yml   ps
+  549  docker-compose -f ashucompose.yml down
+  560  vim  docker-compose.yaml
+  561  cat  docker-compose.yaml 
+  563  docker-compose up -d
+  564  docker-compose ps 
+  565  docker-compose down
+  566  docker-compose up --build -d
+  568  docker-compose ps
+  571  cp  docker-compose.yaml   /tmp/app3comse.yml
+  574  cat  docker-compose.yaml 
+  592  docker-compose down 
+  596  vim docker-compose.yaml 
+  598  cat docker-compose.yaml 
+  600  docker-compose up --build  -d
+  601  vim docker-compose.yaml 
+  603  cat  docker-compose.yaml 
+  604  docker-compose up --build  -d
+  607  cat  docker-compose.yaml 
+  623  cat  ashuapp1/docker-compose.yaml 
+  626  cat  ashuapp3/docker-compose.yaml 
+  634  history   |   grep -i docker-com
+  635  history   |   grep -i docker-com  >/home/user20/day3.txt

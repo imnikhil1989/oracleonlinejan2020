@@ -1,0 +1,13 @@
+version: '3.2'
+services:
+ ashudb:
+  image: mysql
+  container_name: ashudbc1
+  ports:
+   - '2133:3306'  #  just optional  incase u want to expose your database outside 
+  environment:
+   - MYSQL_ROOT_PASSWORD=Oracle123
+
+
+
+
