@@ -1,0 +1,46 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  namespace: ashutoshh
+  creationTimestamp: null
+  labels:
+    app: ashudep1
+  name: ashudep1
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ashudep1
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: ashudep1
+    spec:
+      containers:
+      - image: dockerashu/ashuoracleweb:v2
+        name: ashuoracleweb
+        resources: {}
+status: {}
+#   this is  service  section  
+---
+apiVersion: v1
+kind: Service
+metadata:
+  namespace: ashutoshh
+  creationTimestamp: null
+  labels:
+    app: ashudep1svc
+  name: ashudep1svc
+spec:
+  ports:
+  - name: "80"
+    port: 80
+    protocol: TCP
+    targetPort: 80
+  selector:
+    app: ashudep1
+  type: LoadBalancer
+status:
+  loadBalancer: {}

@@ -1,0 +1,24 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  creationTimestamp: null
+  labels:
+    run: ashupod2
+  name: ashupod2
+spec:
+  containers:
+  - command:
+    - ping
+    - google.com
+    image: alpine
+    name: ashupod2
+    resources: {}
+    env:           #  to  use  configmap  we can use env 
+     - name: ashuenv  #  name of  enn  var  we  want to create
+       valueFrom:
+        configMapKeyRef:
+         name: ashucm  #  name of configmpa  we created
+         key:  x   #  key  of configmap we  used  --like  x=hello
+  dnsPolicy: ClusterFirst
+  restartPolicy: Never
+status: {}

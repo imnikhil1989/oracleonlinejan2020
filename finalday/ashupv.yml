@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: ashupv  # uniq  name 
+spec:
+  capacity:
+    storage: 5Gi  #  diff  size  bet   1 to 5  
+  accessModes:
+    - ReadWriteMany   #    ReadWriteOnce  , ReadWriteMany  , ReadOnlyMany 
+  storageClassName: fast   #  fast  , veryfast , veryslow  fast 
+  nfs:
+    path: /data/user20
+    server: 172.31.21.157

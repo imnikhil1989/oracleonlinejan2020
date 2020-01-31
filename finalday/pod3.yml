@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Pod
+metadata:
+ name: ashupod3
+ namespace: ashutoshh
+
+spec:
+ containers:
+  - name: ashucfinal1
+    image: alpine
+    command: ["/bin/sh","-c","ping  $website"]
+    env:
+     - name: website  #  variable name 
+       valueFrom:
+        configMapKeyRef:
+         name: ashucm2  #  this is the name of  configmap 
+         key: web
